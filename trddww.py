@@ -3,26 +3,26 @@ import requests
 
 
 
-print ("downloading with requests")
+print ('downloading with requests')
 url = ('http://novo-diveevo.org/Areas/kaptl/Content/vendor.js')
 r = requests.get(url)
-with open("vendor.js", "wb") as code:
+with open('vendor.js', 'wb') as code:
     code.write(r.content)
 
     
-f = open('vendor.js') # 
-line = f.readline()
-line_2 = f.readline()
-kek = ('')
-
-
-if line_2 == kek:
+a=' '
+file=open('vendor.js','r',encoding='utf-8')
+text=file.read()
+if a in text:
+    print('no-minified')
+else:
     print('minified')
-elif line_2 != kek:
-    print('non-minified')
+
+
+
     
 
-f.close()
+
 
 folder_size = os.path.getsize('vendor.js') #
 mb = float(1024000.0)
