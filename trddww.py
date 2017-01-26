@@ -1,7 +1,7 @@
 import os
 import requests
 
-import requests
+
 
 print ("downloading with requests")
 url = ('http://novo-diveevo.org/Areas/kaptl/Content/vendor.js')
