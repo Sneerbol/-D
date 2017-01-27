@@ -1,6 +1,6 @@
 import os
 import requests
-
+import sys
 
 
 print ('downloading with requests')
@@ -10,21 +10,21 @@ with open('vendor.js', 'wb') as code:
     code.write(r.content)
 
     
-a=' '
-file=open('vendor.js','r',encoding='utf-8')
-text=file.read()
-if a in text:
-    print('no-minified')
-else:
-    print('minified')
 
-
-
-    
-
-
-
-folder_size = os.path.getsize('vendor.js') #
+f=open('vendor.js','r',encoding='utf-8') #
+n = 0
+for s in f:
+    i = s.find('/n')
+    if i > -1:        
+        n += 1
+      
+if n > 1:
+    print('no-min')
+elif n <= 1:
+    print('min')
+f.close()
+  
+folder_size = os.path.getsize('vendor.js') # 
 mb = float(1024000.0)
 mbb = float(folder_size) / float(mb)
 max_mb = float(1.1)
