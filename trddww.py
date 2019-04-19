@@ -14,7 +14,7 @@ with open('vendor.js', 'wb') as code:
 f=open('vendor.js','r',encoding='utf-8') ''' open file below '''
 n = 0
 for s in f:
-    i = s.find('/n') ''' if downloaded code contains "/n" than code is minified '''
+    i = s.find('/n') ''' if downloaded code contains more than 1 "/n" than code is not minified '''
     if i > -1:        
         n += 1
       
